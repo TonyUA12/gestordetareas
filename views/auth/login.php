@@ -1,5 +1,4 @@
-<div  class="container 
-in">
+<div  class="container login">
     <?php include_once __DIR__ .'/../templates/nombre-sitio.php';?>
     <div class="container-sm">
         <p class="page-description">Iniciar Sesión</p>

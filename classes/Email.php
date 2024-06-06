@@ -17,11 +17,11 @@ class Email{
     public function sendConfirmation(){
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = $_ENV['EMAIL_HOST'];
+        $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
-        $mail->Port = $_ENV['EMAIL_PORT'];
-        $mail->Username = $_ENV['EMAIL_USER'];
-        $mail->Password = $_ENV['EMAIL_PASS'];
+        $mail->Port = 2525;
+        $mail->Username = '16c73396f8ed1e';
+        $mail->Password = 'f5fd47d44c91e3';
 
         $mail->setFrom('cuentas@gestionate.com');
         $mail->addAddress('cuentas@gestionate.com', 'gestionate.com');
@@ -32,7 +32,7 @@ class Email{
 
         $contenido = '<html>';
         $contenido .= "<p><strong>Hola ". $this->email ."</strong> Tu cuenta ah sido creada en GESTIONATE, confirmala en el siguiente enlace</p>";
-        $contenido .= "<p>Presiona aqui: <a href='". $_ENV['APP_URL'] ."/confirmaccount?token=". $this->token ."'> Confirmar Cuenta</a>";
+        $contenido .= "<p>Presiona aqui: <a href='https://gestionate.webeacontony.com/confirmaccount?token=". $this->token ."'> Confirmar Cuenta</a>";
         $contenido .= "<p>Si no reconoces la cuenta, ignora el mensaje</p>";
         $contenido .= '</html>';
 
@@ -45,11 +45,11 @@ class Email{
     public function sendInstructions(){
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = $_ENV['EMAIL_HOST'];
+        $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
-        $mail->Port = $_ENV['EMAIL_PORT'];
-        $mail->Username = $_ENV['EMAIL_USER'];
-        $mail->Password = $_ENV['EMAIL_PASS'];
+        $mail->Port = 2525;
+        $mail->Username = '16c73396f8ed1e';
+        $mail->Password = 'f5fd47d44c91e3';
 
         $mail->setFrom('cuentas@gestionate.com');
         $mail->addAddress('cuentas@gestionate.com', 'gestionate.com');
@@ -60,7 +60,7 @@ class Email{
 
         $contenido = '<html>';
         $contenido .= "<p><strong>Hola ". $this->email ."</strong> Crea tu nueva contraseña en el siguiente enlace</p>";
-        $contenido .= "<p>Presiona aqui: <a href='". $_ENV['APP_URL'] ."/resetpassword?token=". $this->token ."'> Reestablecer Contraseña </a>";
+        $contenido .= "<p>Presiona aqui: <a href='https://gestionate.webeacontony.com/resetpassword?token=". $this->token ."'> Reestablecer Contraseña </a>";
         $contenido .= "<p>Si no reconoces el correo, ignora el mensaje</p>";
         $contenido .= '</html>';
 
