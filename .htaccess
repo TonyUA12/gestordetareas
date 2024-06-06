@@ -1,0 +1,13 @@
+AddHandler application/x-httpd-php82 .php .php5 .php4 .php3
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Si la solicitud no es para un archivo o directorio existente
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Redirige todas las solicitudes a public/index.php
+    RewriteRule ^(.*)$ public/index.php [L]
+</IfModule>
