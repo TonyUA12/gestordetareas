@@ -24,7 +24,7 @@ function confirmChangeStatus(taskStatus) {
         if (result.isConfirmed) {
             changeStatus(taskStatus);
         } 
-        window.location = "http://localhost:3000/dashboard";
+        window.location = "/dashboard";
     })
 }
 
@@ -35,7 +35,7 @@ async function changeStatus(taskStatus){
     datos.append('status', status);
 
     try {
-        const url = 'http://localhost:3000/task/status';
+        const url = '/task/status';
         const respuesta = await fetch(url, {
             method: 'POST',
             body: datos
@@ -84,7 +84,7 @@ function confirmDeleteTask(taskDates) {
         if (result.isConfirmed) {
             deleteTask(taskDates);
         } 
-        window.location = "http://localhost:3000/dashboard";
+        window.location = "/dashboard";
     })
 }
 
@@ -99,7 +99,7 @@ async function deleteTask(taskDates) {
     datos.append('dueDate', dueDate);
 
     try {
-        const url = 'http://localhost:3000/task/delete';
+        const url = '/task/delete';
         const respuesta = await fetch(url, {
             method: 'POST',
             body: datos
