@@ -1,0 +1,20 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.login{
+    padding-top: 5rem;
+    .gestionate{
+        @include m.degradText(v.$azul)
+    }
+
+    input[type="submit"]{
+        @include m.boton(v.$azul, v.$blanco);
+        border-radius: 1.5rem;
+    }
+
+    .options{
+        a{
+            color: v.$azul;
+        }
+    }
+}

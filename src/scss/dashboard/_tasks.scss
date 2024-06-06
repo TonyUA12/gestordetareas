@@ -1,0 +1,66 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.tasks-list{
+    list-style: none;
+    padding: 0;
+    @include m.grid(1, 2rem);
+    .task{
+        background-color: v.$azulClaroCajas;
+        min-height: 12rem;
+        text-align: center;
+        
+        p{
+            color: v.$negro;
+        }
+
+        @include m.tablet{
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            text-align: end;
+        }
+
+        .task-tittle{
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin: 0;
+            padding: 0;
+        }
+
+        .options{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 1rem;
+            
+            .update-task{
+                @include m.boton(v.$naranja, v.$blanco);
+                border-radius: 1.5rem;
+                margin-left: 1rem;
+                margin-right: 1rem;
+                color: v.$blanco;
+            }
+    
+            .delete-task{
+                @include m.boton(v.$rojo, v.$blanco);
+                border-radius: 1.5rem;
+                margin-right: 1rem;
+            }
+            .change-status-orchid{
+                @include m.boton(v.$orchid, v.$blanco);
+                border-radius: 1.5rem;
+                margin-right: 1rem;
+            }
+
+            .change-status-green{
+                @include m.boton(v.$verde, v.$blanco);
+                border-radius: 1.5rem;
+                margin-right: 1rem;
+            }
+        }
+
+        
+    }
+
+    
+}

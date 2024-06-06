@@ -1,0 +1,20 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.create{
+    padding-top: 5rem;
+    .gestionate{
+        @include m.degradText(v.$indigo)
+    }
+
+    input[type="submit"]{
+        @include m.boton(v.$azul, v.$blanco);
+        border-radius: 1.5rem;
+    }
+
+    .options{
+        a{
+            color: v.$azul;
+        }
+    }
+}

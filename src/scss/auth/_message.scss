@@ -1,0 +1,28 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.message {
+    padding-top: 15rem;
+    .gestionate{
+        @include m.degradText(v.$naranja)
+    }
+    .option{
+        
+        text-align: center;
+        font-size: 3rem;
+        transition-property: background-color;
+        transition-duration: .3s;
+        
+        a{
+            text-decoration: none;
+            color: v.$negro;
+            padding: 1rem;
+            border-radius: 2rem;
+            
+        }
+        :hover{
+            background-color: darken( v.$naranja, 10% );
+        }
+
+    }
+}
